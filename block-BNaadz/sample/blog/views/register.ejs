@@ -1,9 +1,13 @@
-<% include partials/header %>
-<h2>Register</h2>
-<form action="/users/register" method="POST">
-  <input type="name" name="name" placeholder="Add Name" />
-  <input type="email" name="email" placeholder="Add Email" />
-  <input type="password" name="password" placeholder="Password" />
-  <input type="submit" />
+<% include partials/header.ejs %>
+
+<form action="/register" method="post">
+  <h1>Register</h1>
+  <input type="text" name="firstName" placeholder="Enter first Name" />
+  <input type="text" name="lastName" placeholder="Enter last Name" />
+  <input type="email" name="email" placeholder="Enter your email" />
+  <input type="password" name="password" placeholder="Enter password" />
+  <input type="text" name="city" placeholder="Enter City" />
+  <button>Submit Details</button>
 </form>
-<% include partials/footer %>
+
+<% include partials/footer.ejs %>
