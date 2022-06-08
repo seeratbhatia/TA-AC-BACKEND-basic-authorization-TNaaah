@@ -1,0 +1,34 @@
+<% include partials/header.ejs %>
+
+<div class="container">
+  <form action="/articles/<%= article.id %>" method="post">
+    <h2>Update Article Detail</h2>
+    <input
+      type="text"
+      name="title"
+      placeholder="article Name"
+      value="<%= article.title %>"
+    />
+    <input
+      type="text"
+      name="description"
+      placeholder="Description"
+      value="<%= article.description %>"
+    />
+    <input
+      type="number"
+      name="likes"
+      placeholder="likes"
+      value="<%= article.likes %>"
+    />
+    <input
+      type="text"
+      name="author"
+      placeholder="Author Name"
+      value="<%= article.author %>"
+    />
+    <button type="submit">Update Article</button>
+  </form>
+</div>
+
+<% include partials/footer.ejs %>

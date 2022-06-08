@@ -1,0 +1,14 @@
+<% include partials/header.ejs %>
+
+<div class="container">
+  <form action="/comments/<%= comment.id%>" method="post">
+    <h2>Update Comments</h2>
+    <textarea name="comment" rows="6" placeholder="Update Comment">
+            <%= comment.comment %>
+        </textarea
+    >
+    <button class="btn">Update Comment</button>
+  </form>
+</div>
+
+<% include partials/footer.ejs %>
