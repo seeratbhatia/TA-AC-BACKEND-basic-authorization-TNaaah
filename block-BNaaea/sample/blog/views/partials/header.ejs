@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blog</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="flex jc-between ai-center">
+          <h2><a href="/">Blog</a></h2>
+          <ul class="flex jc-around ai-center">
+            <li><a class="btn" href="/articles">Articles</a></li>
+            <% if(register) { %>
+            <li>
+              <a class="btn" href=""><%= register.firstName %></a>
+            </li>
+            <li><a class="btn" href="/articles/myArticle">My Article</a></li>
+            <li><a class="btn" href="/articles/new">Add Article</a></li>
+            <li><a class="btn" href="/register/logout">Logout</a></li>
+            <% }else { %>
+            <li><a class="btn" href="/register/login">Login</a></li>
+            <li><a class="btn" href="/register">Register</a></li>
+            <% } %>
+          </ul>
+        </div>
+      </div>
+    </header>
+  </body>
+</html>
