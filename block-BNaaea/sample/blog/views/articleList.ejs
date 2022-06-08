@@ -1,0 +1,17 @@
+<% include partials/header.ejs %>
+
+<div class="container">
+  <h1>Article List</h1>
+
+  <% articles.forEach(article => { %>
+  <div class="align-left">
+    <h2><%= article.title %></h2>
+    <div class="flex jc-between">
+      <h3><%= article.description.substr(0, 50) + "..." %></h3>
+      <a class="btn" href="/articles/<%= article._id %>"> Show Details... </a>
+    </div>
+  </div>
+  <% }) %>
+</div>
+
+<% include partials/footer.ejs %>
