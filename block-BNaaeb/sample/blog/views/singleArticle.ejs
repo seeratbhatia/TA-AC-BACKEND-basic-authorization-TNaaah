@@ -1,0 +1,51 @@
+<% include partials/header.ejs %>
+
+<div class="container">
+  <div>
+    <h1><%= article.title %></h1>
+    <h2><%= article.author %></h2>
+    <p><%= article.description %></p>
+    <div class="flex jc-center ai-center">
+      <h3>Likes: <%= article.likes %></h3>
+      <a href="/articles/<%= article.id %>/inc">
+        <button class="btn">Likes</button>
+      </a>
+    </div>
+  </div>
+  <div>
+    <a href="/articles/<%= article.id %>/edit">
+      <button class="edit">Update</button>
+    </a>
+    <a href="/articles/<%= article.id %>/delete">
+      <button class="delete">Delete</button>
+    </a>
+  </div>
+  <h2>Comments</h2>
+  <hr />
+  <div class="flex jc-between ai-start">
+    <div class="flex-60">
+      <% article.comments.forEach(c => { %>
+      <div class="align-left flex jc-between">
+        <p><%= c.comment %></p>
+        <div>
+          <a href="/comments/<%= c.id %>/edit">
+            <button class="edit">Edit</button>
+          </a>
+          <a href="/comments/<%= c.id %>/delete">
+            <button class="delete">Delete</button>
+          </a>
+        </div>
+      </div>
+      <% }) %>
+    </div>
+
+    <div class="flex-30">
+      <form action="/articles/<%= article.id %>/comments" method="post">
+        <textarea name="comment" rows="3" placeholder="Add Comment"></textarea>
+        <input type="submit" value="Add Comment" />
+      </form>
+    </div>
+  </div>
+</div>
+
+<% include partials/footer.ejs %>
